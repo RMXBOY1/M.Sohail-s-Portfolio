@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M. Sohail | Web Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+  <link rel="stylesheet" href="CV.html">
+
+</head>
+<body>
+
+  <!-- ======= NAVBAR ======= -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="logo">&lt;<span>SR</span>/&gt;</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <!--<li><a href="https://youtube.com/@m.sohailrafiq?si=oxR5jVfmhTXVjvty" target="_blank" rel="noopener noreferrer">YouTube</a></li>-->
+      </ul>
+      <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+    </div>
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="#home" onclick="closeMobile()">Home</a></li>
+      <li><a href="#about" onclick="closeMobile()">About</a></li>
+      <li><a href="#skills" onclick="closeMobile()">Skills</a></li>
+      <li><a href="#projects" onclick="closeMobile()">Projects</a></li>
+      <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ======= HERO ======= -->
+  <section class="hero" id="home">
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+
+      <!-- LEFT: Text -->
+      <div class="hero-text">
+        <div class="hero-tag">Available for opportunities</div>
+        <h1>
+          <!-- ✏️ Change to your name -->
+          <span class="name">M. Sohail Rafiq</span>
+          <span class="hero-role-wrap">
+            <!--<span class="role">Web Developer</span>-->
+            <span class="hero-rotating">
+              <span id="roleRotatorText"></span><span class="hero-cursor">|</span>
+            </span>
+          </span>
+        </h1>
+        <!-- ✏️ Change description -->
+        <p class="hero-desc">I build clean, fast, and responsive web experiences. Passionate about turning ideas into real digital products using modern web technologies.</p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#contact" class="btn-outline">Get In Touch</a>
+          <a href="My-CV.html" class="btn-primary">View My CV</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">4<span>mo</span></div>
+            <div class="stat-label">Course</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">4<span>mo</span></div>
+            <div class="stat-label">Internship</div>
+          </div>
+          <div class="stat">
+            <!-- ✏️ Change number -->
+            <div class="stat-num">10<span>+</span></div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat">
+            <!-- ✏️ Change number -->
+            <div class="stat-num">100%<span></span></div>
+            <div class="stat-label">Satisfaction</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Profile Picture -->
+      <div class="hero-pic">
+        <div class="pic-outer">
+          <div class="pic-ring"></div>
+          <div class="pic-border"></div>
+          <div class="pic-frame">
+            <!-- ✏️ Replace src with your image path if needed -->
+            <img id="profileImg" src="pic.png" alt="Profile Photo">
+          </div>
+          <div class="pic-dot"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======= ABOUT ======= -->
+  <section id="about" class="section">
+    <div class="section-inner">
+      <div class="section-tag">Who I Am</div>
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+
+        <div class="about-text">
+          <!-- ✏️ Edit your bio -->
+          <p>I'm a <strong>web developer</strong> focused on building polished, responsive websites and web interfaces that look professional, load fast, and guide users clearly.</p>
+          <p>I can create landing pages, portfolio websites, business sites, contact forms, dashboard layouts, and modern frontend experiences with clean structure and practical design.</p>
+          <div class="timeline">
+            <!-- ✏️ Edit year and descriptions
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div>
+                <div class="tl-year">07-2025</div>
+                <div class="tl-title">Web Development Course</div>
+                <div class="tl-desc">Completed an intensive 4-month program covering HTML, CSS, JavaScript, Laravel, and MySQL with project-based learning.</div>
+              </div>
+            </div> -->
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div>
+                <div class="tl-year">2026 – Present</div>
+                <!-- ✏️ Add your company name -->
+                <div class="tl-title">Web Developer Intern</div>
+                <div class="tl-desc">Working on live projects and team collaboration, with a focus on responsive design, clean UI, and reliable delivery.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-card">
+          <div class="code-block">
+            <div><span class="kw">const</span> <span class="fn">developer</span> = {</div>
+            <!-- ✏️ Change name, skills etc -->
+            <div>&nbsp;&nbsp;<span class="str">name</span>: <span class="val">"M. Sohail"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="str">role</span>: <span class="val">"Frontend Web Developer"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="str">skills</span>: [<span class="val">"HTML"</span>, <span class="val">"CSS"</span>, <span class="val">"JavaScript"</span>, <span class="val">"Laravel"</span>, <span class="val" style="margin-left: 6vw;">"MySQL"</span>, <span class="val">"Python"</span>, <span class="val">"UI/UX <span>Design</span>"</span>, <span class="val">"MySQL|DB"</span> ],</div>
+            <div>&nbsp;&nbsp;<span class="str">status</span>: <span class="val">"Available for Projects"</span>,</div>
+            <div>&nbsp;&nbsp;<span class="fn">greet</span>() {</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="str">"Let's build something solid."</span>;</div>
+            <div>&nbsp;&nbsp;}</div>
+            <div>};</div>
+            <div class="cm">// Building clean, practical, user-friendly experiences.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= SKILLS ======= -->
+  <section id="skills" class="section section-alt">
+    <div class="section-inner">
+      <div class="section-tag">What I Know</div>
+      <h2 class="section-title">My Skills</h2>
+      <p class="section-sub">Technologies I use to build great web experiences.</p>
+      <div class="skills-grid">
+
+        <!-- ✏️ Edit skill name and width (0-100) -->
+        <div class="skill-card">
+          <div class="sk-icon">🌐</div>
+          <div class="sk-name">HTML</div>
+          <div class="sk-bar"><div class="sk-fill" data-w="100"></div></div>
+          <div class="sk-pct">Advanced</div>
+        </div>
+        <div class="skill-card">
+          <div class="sk-icon">🌐</div>
+          <div class="sk-name">CSS</div>
+          <div class="sk-bar"><div class="sk-fill" data-w="100"></div></div>
+          <div class="sk-pct">Advanced</div>
+        </div>
+        <div class="skill-card">
+          <div class="sk-icon">⚡</div>
+          <div class="sk-name">JavaScript</div>
+          <div class="sk-bar"><div class="sk-fill" data-w="70"></div></div>
+          <div class="sk-pct">Intermediate</div>
+        </div>
+        <div class="skill-card">
+          <div class="sk-icon" style="color: #f05050;"><i class="fa-brands fa-laravel"></i></div>
+          <div class="sk-name">LARAVEL</div>
+          <div class="sk-bar"><div class="sk-fill" data-w="75"></div></div>
+          <div class="sk-pct">Intermediate</div>
+        </div>
+        <div class="skill-card">
+          <div class="sk-icon">📱</div>
+          <div class="sk-name">Responsive Design</div>
+          <div class="sk-bar"><div class="sk-fill" data-w="95"></div></div>
+          <div class="sk-pct">Advanced</div>
+        </div>
+        <div class="skill-card">
+          <div class="sk-icon">🎨</div>
+          <div class="sk-name">Frontend Design</div>
+          <div class="sk-bar"><div class="sk-fill" data-w="95"></div></div>
+          <div class="sk-pct">Advanced</div>
+        </div>
+        <div class="skill-card">
+          <div class="sk-icon">🐍</div>
+          <div class="sk-name">Python</div>
+          <div class="sk-bar"><div class="sk-fill" data-w="70"></div></div>
+          <div class="sk-pct">Intermediate</div>
+        </div>
+        <div class="skill-card">
+          <div class="sk-icon">🎨</div>
+          <div class="sk-name">UI/UX Design</div>
+          <div class="sk-bar"><div class="sk-fill" data-w="90"></div></div>
+          <div class="sk-pct">Expert</div>
+        </div>
+        <div class="skill-card">
+          <div class="sk-icon">🎨</div>
+          <div class="sk-name">MySQL | DB</div>
+          <div class="sk-bar"><div class="sk-fill" data-w="80"></div></div>
+          <div class="sk-pct">Intermediate</div>
+        </div>
+        <!--<div class="skill-card">
+          <div class="sk-icon">🔧</div>
+          <div class="sk-name">Git & GitHub</div>
+          <div class="sk-bar"><div class="sk-fill" data-w="70"></div></div>
+          <div class="sk-pct">70%</div>
+        </div>
+        <div class="skill-card">
+          <div class="sk-icon">💻</div>
+          <div class="sk-name">VS Code</div>
+          <div class="sk-bar"><div class="sk-fill" data-w="95"></div></div>
+          <div class="sk-pct">95%</div>
+        </div>-->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PROJECTS ======= -->
+  <section id="projects" class="section">
+    <div class="section-inner">
+      <div class="section-tag">My Work</div>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">Things I've built during my course and internship.</p><br>
+      <h2 class="section-title">Landing Pages :</h2>
+      <div class="projects-grid">
+
+        <!-- ✏️ Business Landing Page -->
+        <div class="project-card">
+            <div class="proj-img" style="background:linear-gradient(135deg,#0d1a2a,#1a2d40);"><i class="fa-regular fa-building"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="proj-title">Business Landing Page</div>
+            <div class="proj-desc">A fully responsive business landing page with service showcase, contact forms, and smooth animations.</div>
+            <div class="proj-links">
+              <a href="Landing/Business/Digital Agency — Prime Executive Services.html" target="_blank" class="proj-link">🔗 Live Demo</a>  <!-- ✏️ Add your live URL -->
+              
+            </div>
+          </div>
+        </div>
+        <!-- ✏️ Product Landing Page -->
+        <div class="project-card">
+            <div class="proj-img" style="background:linear-gradient(135deg,#0d1a2a,#1a2d40);"><i class="fa-solid fa-box-open"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="proj-title">Product Landing Page</div>
+            <div class="proj-desc">A fully responsive product landing page with features showcase, contact forms, and smooth animations.</div>
+            <div class="proj-links">
+              <a href="Landing/Product//NovaProduct — Modern Product Landing Page.html" target="_blank" class="proj-link">🔗 Live Demo</a>  <!-- ✏️ Add your live URL -->              
+            </div>
+          </div>
+        </div>
+
+      </div><br><br>
+
+      <h2 class="section-title">Other Projects :</h2>
+      <div class="projects-grid">
+
+        <!-- ✏️ Real Estate Website -->
+        <div class="project-card">
+            <div class="proj-img" style="background:linear-gradient(135deg,#0d1a2a,#1a2d40);"><i class="fas fa-home" style="color: white;"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="proj-title">Real Estate Website</div>
+            <div class="proj-desc">A fully responsive real estate website with property showcase, contact forms, Buy/Sell options, and smooth animations.</div>
+            <div class="proj-links">
+              <a href="https://rmxboy1.github.io/Real-Estate-Landing-Page/" target="_blank" class="proj-link">📁 GitHub</a>    <!-- ✏️ Add your GitHub URL -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ✏️ Smart Business Agency Website -->
+        <div class="project-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#0a1f0d,#162a1a);">📋</div>
+          <div class="proj-body">
+            <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+            <div class="proj-title">Smart Business Agency</div>
+            <div class="proj-desc">A fully responsive business website with service showcase, contact forms, processes, about info, and smooth animations.</div>
+            <div class="proj-links">
+              <a href="Websites/Business Website/Smart Business Agency.html" target="_blank" class="proj-link">🔗 Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✏️ E-commerce | ELITE FASHION - Premium Clothing Store Website -->
+        <div class="project-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#1a0d2a,#2a1040);"><i class="fa-solid fa-store"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+            <div class="proj-title">ELITE FASHION - Premium Clothing Store</div>
+            <div class="proj-desc">A modern e-commerce website for a premium clothing store with product showcase, shopping cart, and secure checkout.</div>
+            <div class="proj-links">
+              <a href="Websites/Ecommerce Website/Elite Fashion - Premium Clothing Store.html" target="_blank" class="proj-link">🔗 Live Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ✏️ E-commerce | URBAN CLOTH - Urban Clothing Store Website
+        <div class="project-card">
+          <div class="proj-img" style="background:linear-gradient(135deg,#1a0d2a,#2a1040);"><i class="fa-solid fa-store"></i></div>
+          <div class="proj-body">
+            <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+            <div class="proj-title">Urban Cloth Store</div>
+            <div class="proj-desc">A modern e-commerce website for an urban clothing store with product showcase, shopping cart, and secure checkout.</div>
+            <div class="proj-links">
+              <a href="Websites/Ecommerce Second/Urban Cloth Store.html" target="_blank" class="proj-link">🔗 Live Demo</a>
+            </div>
+          </div>
+        </div>-->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT ======= -->
+  <section id="contact" class="section section-alt">
+    <div class="section-inner">
+      <div class="section-tag">Let's Talk</div>
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-sub">Open to freelance, internship extensions, and full-time opportunities.</p>
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <!-- ✏️ Edit your contact details -->
+          <div class="contact-item">
+            <div class="c-icon">📧</div>
+            <div>
+              <div class="c-label">Email</div>
+              <div class="c-val">itxharoon65@gmail.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">📍</div>
+            <div>
+              <div class="c-label">Location</div>
+              <div class="c-val">Punjab, Pakistan</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">💼</div>
+            <div>
+              <div class="c-label">Status</div>
+              <div class="c-val">Interner — Open to Offers</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">🌐</div>
+            <div>
+              <div class="c-label">Click Below - Whatsapp</div>
+              <!-- ✏️ Your GitHub username -->
+              <div class="c-val"><a href="https://wa.me/923008909105?text=Hi%20M.%20Sohail%20Rafiq,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you." target="_blank" rel="noopener noreferrer">0300-8909105</a></div>
+            </div>
+          </div>
+          <!--<div class="contact-item">
+            <div class="c-icon">🐙</div>
+            <div>
+              <div class="c-label">GitHub</div>-->
+              <!-- ✏️ Your GitHub username -->
+              <!--<div class="c-val">github.com/sohaildev</div>
+            </div>
+          </div>-->
+        </div>
+
+        <!--<div class="contact-form">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="Muhammad Sohail" id="cName">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="you@email.com" id="cEmail">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="I'd like to hire you for..." id="cMsg"></textarea>
+          </div>
+          <button class="form-submit" onclick="sendMsg()">Send Message →</button>
+        </div>-->
+
+        <form id="contact-form">
+          <div class="form-group">
+            <input type="text" id="cName" placeholder="Your Name" required>
+          </div>
+
+          <div class="form-group">
+            <input type="email" id="cEmail" placeholder="Your Email" required>
+          </div>
+
+          <div class="form-group">
+            <textarea id="cMsg" placeholder="Your Message" required></textarea>
+          </div>
+
+          <button class="form-submit" type="submit">Send Message</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+
+  <button id="scrollTopBtn" title="Go to top">
+    ↑
+  </button>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    <div class="footer-inner">
+      <!-- ✏️ Your name and year -->
+      <div class="footer-copy">© 2026 M. Sohail Rafiq Developer — Built with ❤️ using HTML, CSS & JS</div>
+      <div class="social-links">
+        <!-- ✏️ Add your social links -->
+        <a href="https://wa.me/923008909105?text=Hi%20M.%20Sohail%20Rafiq,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you." target="_blank" rel="noopener noreferrer" class="social-link" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        
+
+        <!--<a href="#" class="social-link" title="LinkedIn">in</a>
+        <a href="#" class="social-link" title="GitHub">gh</a>
+        <a href="#" class="social-link" title="Twitter">tw</a>-->
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init({
+      publicKey: "j4rzB1dQI0-XmG7xZ"
+    });
+  </script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

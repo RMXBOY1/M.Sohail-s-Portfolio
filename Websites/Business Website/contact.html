@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - SmartBiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="Smart Business Agency.html" class="logo">Smart<span>Biz</span></a>
+      <nav class="nav" id="navbar">
+        <a href="Smart Business Agency.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main class="section contact-page">
+    <div class="container split-grid animate-up">
+      <div>
+        <h1>Contact Us</h1>
+        <p>Ready to start your project? Send a message or reach out directly via email or WhatsApp.</p>
+        <div class="contact-info">
+          <p><strong>Email:</strong> itxharooon65@gmail.com</p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/1234567890" target="_blank" rel="noreferrer">+92 300 1234567</a></p>
+          <p><strong>Working Hours:</strong> Mon–Fri, 9am–6pm</p>
+        </div>
+      </div>
+      <form class="contact-form animate-up delay-1" id="contactForm">
+        <input type="hidden" name="access_key" value="2d4e4fc6-cbc9-465c-b12b-588db0f23e2d">
+        <input type="hidden" name="subject" value="New SmartBiz Contact Form Message">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display: none;">
+
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="company">Company</label>
+        <input id="company" name="company" type="text">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p class="form-status" id="formStatus" hidden></p>
+      </form>
+    </div>
+
+    <section class="container animate-up delay-2">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <article class="faq-item">
+          <h3>How long does a website take?</h3>
+          <p>Most projects launch within 2–4 weeks, depending on scope and review cycles.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Can you update my current website?</h3>
+          <p>Yes. We can improve an existing site or build a fresh version with new design and features.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Do you provide ongoing support?</h3>
+          <p>We offer post-launch support and maintenance to keep your website secure and up to date.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 SmartBiz Agency.</p>
+      <div class="footer-links">
+        <a href="https://wa.me/1234567890" target="_blank" rel="noreferrer">WhatsApp</a>
+        <a href="mailto:itxharooon65@gmail.com">itxharooon65@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

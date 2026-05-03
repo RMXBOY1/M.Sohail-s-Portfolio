@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CV — Navy Blue + Cyan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      :root{
+        --navy:#050d1a;
+        --navy2:#0a1628;
+        --navy3:#0f1f35;
+        --cyan:#00e5ff;
+        --cyan2:#00b4cc;
+        --cyan-dim:rgba(0,229,255,0.08);
+        --cyan-border:rgba(0,229,255,0.2);
+        --text:#e8f4f8;
+        --text-muted:#7a9bb5;
+        --text-dim:#3d5670;
+        --gold:#f0c060;
+      }
+      *{margin:0;padding:0;box-sizing:border-box;}
+      body{
+        background:var(--navy);
+        color:var(--text);
+        font-family:'DM Sans',sans-serif;
+        min-height:100vh;
+        position:relative;
+        overflow-x:hidden;
+      }
+
+      /* Ambient background */
+      body::before{
+        content:'';position:fixed;inset:0;
+        background:
+          radial-gradient(ellipse 60% 40% at 15% 10%, rgba(0,180,204,0.12) 0%, transparent 60%),
+          radial-gradient(ellipse 40% 60% at 85% 90%, rgba(0,100,180,0.10) 0%, transparent 60%),
+          radial-gradient(ellipse 80% 30% at 50% 50%, rgba(5,20,40,0.8) 0%, transparent 100%);
+        pointer-events:none;z-index:0;
+      }
+
+      /* Grid lines */
+      body::after{
+        content:'';position:fixed;inset:0;
+        background-image:
+          linear-gradient(rgba(0,229,255,0.025) 1px,transparent 1px),
+          linear-gradient(90deg,rgba(0,229,255,0.025) 1px,transparent 1px);
+        background-size:40px 40px;
+        pointer-events:none;z-index:0;
+      }
+
+      .page{
+        position:relative;z-index:1;
+        max-width:900px;margin:0 auto;
+        padding:60px 40px 80px;
+      }
+
+      /* ─ HEADER ───────────────────────────────── */
+      .header{
+        display:grid;
+        grid-template-columns:1fr auto;
+        gap:40px;
+        align-items:start;
+        margin-bottom:48px;
+        padding-bottom:40px;
+        border-bottom:1px solid var(--cyan-border);
+        animation:fadeDown .8s ease both;
+      }
+
+      /* Photo circle — RIGHT side, big */
+      .photo-wrap{
+        width:140px; height:140px; border-radius:50%;
+        border:2px solid var(--cyan-border);
+        box-shadow:0 0 28px rgba(0,229,255,0.18);
+        overflow:hidden; cursor:pointer;
+        background:var(--navy2);
+        position:relative; flex-shrink:0;
+        align-self:center;
+      }
+      .photo-wrap img{ width:100%; height:100%; object-fit:cover; display:none; }
+      .photo-ph{
+        width:100%; height:100%;
+        display:flex; flex-direction:column;
+        align-items:center; justify-content:center;
+        gap:4px; color:rgba(0,229,255,0.45);
+        font-family:'DM Mono',monospace;
+        font-size:10px; text-align:center; line-height:1.5;
+      }
+      .photo-ph span{ font-size:36px; }
+      .photo-wrap input[type=file]{
+        position:absolute; inset:0; opacity:0; cursor:pointer;
+      }
+      .photo-wrap:hover::after{
+        content:'📷';
+        position:absolute; inset:0; border-radius:50%;
+        background:rgba(0,229,255,0.12);
+        display:grid; place-items:center; font-size:26px;
+      }
+
+      /* name-block — normal, no flex change needed */
+      .name-block{ display:block; }
+      .name-text{ display:block; }
+
+      /* Header right column: photo aligned to TOP */
+      .header-right{
+        display:flex; flex-direction:column;
+        align-items:center; gap:16px;
+        flex-shrink:0;
+        align-self:flex-start;
+      }
+
+      /* Contact row under tagline */
+      .contact-row{
+        display:flex; flex-wrap:wrap; gap:18px;
+        margin-top:14px;
+        padding-top:12px;
+        border-top:1px solid rgba(0,229,255,0.1);
+      }
+      .contact-row .contact-item{ font-size:12px; }
+
+      .name-block{}
+      .name-tag{
+        font-size:11px;letter-spacing:.25em;text-transform:uppercase;
+        color:var(--cyan);font-family:'DM Mono',monospace;
+        margin-bottom:10px;display:flex;align-items:center;gap:10px;
+      }
+      .name-tag::before{content:'';width:30px;height:1px;background:var(--cyan);}
+
+      h1{
+        font-family:'Playfair Display',serif;
+        font-size:clamp(2.6rem,5vw,4rem);
+        font-weight:900;
+        letter-spacing:-0.02em;
+        line-height:1.0;
+        color:#fff;
+        margin-bottom:6px;
+      }
+      .role{
+        font-size:16px;font-weight:500;
+        color:var(--cyan);letter-spacing:.05em;
+        margin-bottom:14px;
+      }
+      .tagline{
+        font-size:13px;color:var(--text-muted);
+        line-height:1.7;max-width:480px;
+      }
+
+      /* Contact block */
+      .contact-block{
+        display:flex;flex-direction:column;
+        gap:10px;align-items:flex-end;
+        flex-shrink:0;
+      }
+      .contact-item{
+        display:flex;align-items:center;gap:9px;
+        font-size:12px;color:var(--text-muted);
+        font-family:'DM Mono',monospace;
+      }
+      .contact-item .icon{
+        width:28px;height:28px;border-radius:7px;
+        background:var(--cyan-dim);border:1px solid var(--cyan-border);
+        display:grid;place-items:center;font-size:12px;color:var(--cyan);
+        flex-shrink:0;
+      }
+
+      /* ─ LAYOUT ───────────────────────────────── */
+      .layout{display:grid;grid-template-columns:1fr 300px;gap:40px;}
+
+      /* ─ SECTION ──────────────────────────────── */
+      .section{margin-bottom:36px;}
+      .section-label{
+        display:flex;align-items:center;gap:12px;
+        font-family:'DM Mono',monospace;font-size:10px;
+        letter-spacing:.25em;text-transform:uppercase;color:var(--cyan);
+        margin-bottom:20px;
+      }
+      .section-label::after{
+        content:'';flex:1;height:1px;
+        background:linear-gradient(90deg,var(--cyan-border),transparent);
+      }
+
+      /* ─ EXPERIENCE CARD ──────────────────────── */
+      .exp-card{
+        background:var(--navy2);
+        border:1px solid var(--cyan-border);
+        border-radius:12px;
+        padding:20px;
+        margin-bottom:14px;
+        position:relative;
+        overflow:hidden;
+        transition:border-color .3s,transform .2s;
+        animation:fadeUp .6s ease both;
+      }
+      .exp-card::before{
+        content:'';position:absolute;left:0;top:0;bottom:0;
+        width:3px;background:linear-gradient(180deg,var(--cyan),transparent);
+        border-radius:3px 0 0 3px;
+      }
+      .exp-card:hover{border-color:rgba(0,229,255,.4);transform:translateX(3px);}
+
+      .exp-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;}
+      .exp-title{font-size:15px;font-weight:600;color:#fff;}
+      .exp-period{
+        font-family:'DM Mono',monospace;font-size:11px;
+        color:var(--cyan);background:var(--cyan-dim);
+        border:1px solid var(--cyan-border);
+        padding:3px 10px;border-radius:20px;
+        white-space:nowrap;flex-shrink:0;
+      }
+      .exp-company{font-size:12px;color:var(--cyan2);margin-bottom:10px;font-weight:500;}
+      .exp-points{list-style:none;padding:0;}
+      .exp-points li{
+        font-size:13px;color:var(--text-muted);
+        line-height:1.6;padding:3px 0 3px 16px;position:relative;
+      }
+      .exp-points li::before{
+        content:'▸';position:absolute;left:0;color:var(--cyan);font-size:10px;top:5px;
+      }
+
+      /* ─ PROJECT CARD ─────────────────────────── */
+      .proj-card{
+        background:var(--navy2);border:1px solid var(--cyan-border);
+        border-radius:12px;padding:18px;margin-bottom:12px;
+        animation:fadeUp .6s ease both;transition:all .3s;
+      }
+      .proj-card:hover{border-color:rgba(0,229,255,.4);background:var(--navy3);}
+      .proj-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+      .proj-name{font-size:14px;font-weight:600;color:#fff;}
+      .proj-link{font-size:11px;color:var(--cyan);font-family:'DM Mono',monospace;text-decoration:none;}
+      .proj-desc{font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:10px;}
+      .proj-tags{display:flex;flex-wrap:wrap;gap:6px;}
+      .tag{
+        font-size:11px;font-family:'DM Mono',monospace;
+        background:var(--cyan-dim);border:1px solid var(--cyan-border);
+        color:var(--cyan);padding:3px 9px;border-radius:6px;
+      }
+
+      /* ─ SIDEBAR ──────────────────────────────── */
+      .sidebar{}
+
+      /* Skills */
+      .skill-group{margin-bottom:20px;}
+      .skill-group-name{font-size:11px;color:var(--text-muted);margin-bottom:10px;font-weight:500;}
+      .skill-item{margin-bottom:10px;}
+      .skill-top{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;}
+      .skill-name{color:var(--text);}
+      .skill-pct{color:var(--cyan);font-family:'DM Mono',monospace;}
+      .skill-bar{height:4px;background:var(--navy3);border-radius:4px;overflow:hidden;}
+      .skill-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--cyan2),var(--cyan));
+        animation:growBar 1s ease both;}
+      @keyframes growBar{from{width:0!important}to{}}
+
+      /* Badges */
+      .badge-grid{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:6px;}
+      .badge{
+        font-size:11px;font-family:'DM Mono',monospace;
+        background:var(--navy3);border:1px solid var(--text-dim);
+        color:var(--text-muted);padding:5px 10px;border-radius:7px;
+      }
+
+      /* Education */
+      .edu-item{
+        background:var(--navy2);border:1px solid var(--cyan-border);
+        border-radius:10px;padding:15px;margin-bottom:10px;
+        animation:fadeUp .6s ease both;
+      }
+      .edu-degree{font-size:13px;font-weight:600;color:#fff;margin-bottom:3px;}
+      .edu-school{font-size:12px;color:var(--cyan2);margin-bottom:4px;}
+      .edu-year{font-size:11px;color:var(--text-muted);font-family:'DM Mono',monospace;}
+
+      /* Stat cards */
+      .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;}
+      .stat-card{
+        background:var(--navy2);border:1px solid var(--cyan-border);
+        border-radius:10px;padding:14px 12px;text-align:center;
+      }
+      .stat-num{font-family:'Playfair Display',serif;font-size:24px;color:var(--cyan);font-weight:700;}
+      .stat-label{font-size:10px;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase;margin-top:2px;}
+
+      /* Language */
+      .lang-item{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+      .lang-name{font-size:13px;color:var(--text);}
+      .lang-level{
+        font-size:10px;font-family:'DM Mono',monospace;
+        color:var(--cyan);background:var(--cyan-dim);
+        border:1px solid var(--cyan-border);padding:2px 8px;border-radius:20px;
+      }
+
+      @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+      @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+      @media print{
+        body::before,body::after{display:none;}
+        .exp-card:hover,.proj-card:hover{transform:none;}
+        .page{padding:30px;}
+      }
+      @media(max-width:700px){
+        .layout{grid-template-columns:1fr;}
+        .header{grid-template-columns:1fr;}
+        .contact-block{align-items:flex-start;}
+      }
+    </style>
+  </head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <!-- LEFT: name, role, tagline, contact row -->
+    <div class="name-block">
+      <div class="name-tag">Web Developer</div>
+      <h1>M. Sohail Rafiq</h1>
+      <div class="role">Full Stack Web Developer</div>
+      <p class="tagline">Passionate web developer crafting high-performance, visually stunning digital experiences. Specialized in modern JavaScript frameworks and responsive design.</p>
+
+      <!-- CONTACT INFO — ek row mein description ke neeche -->
+      <div class="contact-row">
+        <div class="contact-item"><div class="icon">✉</div>itxharoon65@email.com</div>
+        <div class="contact-item"><div class="icon">📞</div>+92 300 8909105</div>
+        <div class="contact-item"><div class="icon">📍</div>Punjab, Pakistan</div>
+        <div class="contact-item"><i class="fa-solid fa-chart-gantt icon"></i><a href="#Projects" style="text-decoration:none;color:#7a9bb5;">View My Work</a></div>
+        <div class="contact-item"><a href="M.Sohail's-CV.png" download><i class="fa-solid fa-download icon"></i></a><a href="M.Sohail's-CV.png" download style="text-decoration:none;color:#7a9bb5;">Download My CV</a></div>
+      </div>
+    </div>
+
+    <div>
+      <img src="pic-1...png" alt="Profile Photo" style="width:200px;height:200px;border-radius:50%;border:2px solid var(--cyan-border);box-shadow:0 0 28px rgba(0,229,255,0.18);object-fit:cover;"/>
+    </div>
+
+    <!-- RIGHT: big photo circle -->
+    <!--<div class="header-right">
+      <div class="photo-wrap" id="photoWrap">
+        <img src="pic.png" alt="Profile Photo"/>
+        <div class="photo-ph" id="photoPh"><span>👤</span>Click to<br>Add Photo</div>
+        <img id="photoImg" src="pic.png" alt="Profile Photo"/>
+        <input type="file" accept="image/*" onchange="loadPhoto(this)"/>
+      </div>
+    </div>-->
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="layout">
+
+    <!-- LEFT COLUMN -->
+    <div class="main">
+
+      <!-- EXPERIENCE -->
+      <div class="section">
+        <div class="section-label">Experience</div>
+
+        <!--<div class="exp-card">
+          <div class="exp-top">
+            <div class="exp-title">Senior Frontend Developer</div>
+            <div class="exp-period">2022 — Present</div>
+          </div>
+          <div class="exp-company">Company Name · Full Time</div>
+          <ul class="exp-points">
+            <li>Built and maintained 10+ responsive web applications using React.js and Next.js</li>
+            <li>Improved page load speed by 40% through code splitting and lazy loading techniques</li>
+            <li>Collaborated with UI/UX team to implement pixel-perfect designs from Figma</li>
+            <li>Mentored 3 junior developers and conducted code reviews</li>
+          </ul>
+        </div>-->
+
+        <div class="exp-card" style="animation-delay:.1s">
+          <div class="exp-top">
+            <div class="exp-title">Web Developer</div>
+            <div class="exp-period">2020 — 2022</div>
+          </div>
+          <div class="exp-company">Previous Projects · Details</div>
+          <ul class="exp-points">
+            <!--<li>Developed full-stack web applications using Node.js, Express, and MongoDB</li>
+            <li>Designed RESTful APIs consumed by mobile and web clients</li>
+            <li>Implemented JWT authentication and role-based access control</li>-->
+            <label for="exp-2">Landing Pages :</label>
+            <li>NovaProduct: Developed a SaaS product platform page showcasing analytics, automation, and tiered pricing to drive conversions.</li>
+            <li>Digital Agency: Engineered a high‑impact agency landing page with responsive design, client testimonials, and lead‑generation workflows.</li>
+            <label for="exp-3">Other Projects :</label>
+            <li>SmartBiz: Designed a growth‑focused agency website highlighting services, brand strategy, and a structured delivery process.</li>
+            <li>Elite Fashion: Built a modern e‑commerce storefront with product catalog, discount integration, and customer service modules.</li>
+          </ul>
+        </div>
+
+        <div class="exp-card" style="animation-delay:.2s">
+          <div class="exp-top">
+            <div class="exp-title">Freelance Web Developer</div>
+            <div class="exp-period">2018 — 2020</div>
+          </div>
+          <div class="exp-company">Self Employed · Remote</div>
+          <ul class="exp-points">
+            <li>Working on Projects<!--Delivered 30+ websites for clients across e-commerce, portfolio, and business sectors--></li>
+            <li>Build 10+ professional, responsive, user-friendly, and clean websites using HTML, CSS, and JavaScript</li>
+            <li>Build 5+ laravel based websites using Laravel, PHP, and MySQL</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="section">
+        <div class="section-label" id="Projects">Featured Projects</div>
+        <div class="section-label"><a href="index.html#projects" style="text-decoration: none; color: #00e5ff;">View My Projects - Click Here</a></div>
+
+        <div class="proj-card">
+          <div class="proj-top">
+            <div class="proj-name">📊 Real Estate Website</div>
+            <a class="proj-link" href="https://rmxboy1.github.io/Real-Estate-Landing-Page/" target="_blank">github.com/my/project →</a>
+          </div>
+          <div class="proj-desc">A fully responsive real estate website with property showcase, contact forms, Buy/Sell options, and smooth animations.</div>
+          <div class="proj-tags">
+            <span class="tag">Html</span><span class="tag">CSS</span><span class="tag">Js</span>
+          </div>
+        </div>
+
+        <div class="proj-card" style="animation-delay:.1s">
+          <div class="proj-top">
+            <div class="proj-name">📋 Smart Business Agency</div>
+            <a class="proj-link" href="Websites/Business Website/Smart Business Agency.html">Live Demo →</a>
+          </div>
+          <div class="proj-desc">Business website for a digital marketing agency with a modern design and responsive layout with smooth animations, services, and sections.</div>
+          <div class="proj-tags">
+            <span class="tag">Html</span><span class="tag">CSS</span><span class="tag">Js</span>
+          </div>
+        </div>
+
+        <div class="proj-card" style="animation-delay:.2s">
+          <div class="proj-top">
+            <div class="proj-name">🛒 ELITE FASHION - Premium Clothing Store</div><!--🤖-->
+            <a class="proj-link" href="Websites/Ecommerce Website/Elite Fashion - Premium Clothing Store.html">Live Demo →</a>
+          </div>
+          <div class="proj-desc">Modern e-commerce storefront for a premium clothing brand with product catalog, discount integration, and customer service modules.</div>
+          <div class="proj-tags">
+            <span class="tag">Html</span><span class="tag">CSS</span><span class="tag">Js</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end main -->
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- STATS -->
+      <div class="section">
+        <div class="section-label">At a Glance</div>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-num">8+</div><div class="stat-label">Months Exp</div></div>
+          <div class="stat-card"><div class="stat-num">15+</div><div class="stat-label">Projects</div></div>
+          <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Clients</div></div>
+          <div class="stat-card"><div class="stat-num">99%</div><div class="stat-label">Uptime</div></div>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="section">
+        <div class="section-label">Technical Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Frontend</div>
+          <div class="skill-item">
+            <div class="skill-top"><span class="skill-name">HTML</span><span class="skill-pct">99%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:99%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top"><span class="skill-name">CSS</span><span class="skill-pct">95%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top"><span class="skill-name">JavaScript</span><span class="skill-pct">85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top"><span class="skill-name">Tailwind CSS</span><span class="skill-pct">70%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Backend</div>
+          <div class="skill-item">
+            <div class="skill-top"><span class="skill-name">Laravel</span><span class="skill-pct">85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top"><span class="skill-name">Python / FastAPI</span><span class="skill-pct">80%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-top"><span class="skill-name">MySQL|DB</span><span class="skill-pct">83%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:83%"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Tools & Others</div>
+          <div class="badge-grid">
+            <span class="badge">Responsive Design</span>
+            <span class="badge">Frontend Development</span>
+            <span class="badge">Backend Development</span>
+            <span class="badge">UI/UX Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <div class="section-label">Education</div>
+        <!--<div class="edu-item">
+          <div class="edu-degree">BS Computer Science</div>
+          <div class="edu-school">University Name</div>
+          <div class="edu-year">2016 — 2020 · CGPA: 3.7/4.0</div>
+        </div>-->
+        <div class="edu-item" style="animation-delay:.1s">
+          <div class="edu-degree">Intermediate (FSc Pre-Engineering)</div>
+          <div class="edu-school">Superior Group of Colleges, Rahim Yar Khan</div>
+          <div class="edu-year">2023 — 2025 · A Grade</div>
+        </div>
+      </div>
+
+      <!-- CERTIFICATIONS -->
+      <div class="section">
+        <div class="section-label">Certifications</div>
+        <div class="badge-grid">
+          <!--<span class="badge">Meta React Developer</span>
+          <span class="badge">AWS Cloud Practitioner</span>
+          <span class="badge">Google UX Design</span>
+          <span class="badge">freeCodeCamp Full Stack</span>-->
+          <span class="badge">Web Developer</span>
+          <!-- href mein apni image ka sahi path/naam likhein -->
+          <a href="M.Sohail-Certificate.jpeg" class="badge" download="M.Sohail-Web-Developer-CV.jpeg" style="text-decoration: none;">
+            View My Certificate - Click Here
+          </a>
+
+        </div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="section">
+        <div class="section-label">Languages</div>
+        <!-- Language Types (1).High: Fluent, (2).High-Mid: Proficient, (3).Mid: Conversational, (4).Low: Basic 
+        (5).Native means مقامی -->
+        <div class="lang-item"><span class="lang-name">Urdu</span><span class="lang-level">Native</span></div>
+        <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">Fluent</span></div>
+        <!-- <div class="lang-item"><span class="lang-name">Punjabi</span><span class="lang-level">Native</span></div> -->
+      </div>
+
+    </div><!-- end sidebar -->
+  </div>
+</div>
+
+<script>
+function loadPhoto(input){
+  const file = input.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = document.getElementById('photoImg');
+    const ph  = document.getElementById('photoPh');
+    img.src = e.target.result;
+    img.style.display = 'block';
+    ph.style.display  = 'none';
+  };
+  reader.readAsDataURL(file);
+}
+</script>
+</body>
+</html>
