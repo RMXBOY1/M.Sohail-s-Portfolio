@@ -88,7 +88,7 @@ window.addEventListener('load', checkFade);
 
 // ======= HERO ROLE ROTATOR =======
 const roleRotator = document.getElementById('roleRotatorText');
-const rotatingRoles = ['Frontend Developer', 'UI Designer', 'Freelancer'];
+const rotatingRoles = ['Frontend Developer', 'Backend Developer', 'Freelancer'];
 
 if (roleRotator && rotatingRoles.length) {
   let roleIndex = 0;
